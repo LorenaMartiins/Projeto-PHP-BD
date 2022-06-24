@@ -1,7 +1,6 @@
 <?php
+include("conexao.php");
 
-  session_start();
-  include("conexao.php");
 
   $email = $_POST["i_email"];
   $senha = $_POST["i_senha"];
@@ -12,13 +11,12 @@
 
   if($row == 1){
     $_SESSION['not_usuario'] = true;
-    echo "Nome do usuario esta em uso!!";
+    echo "<script> javascript:history.go(-1) </script>";
   }else{
     $query_2 = "insert into usuario (email, senha) values('{$email}', md5('{$senha}')";
+    mysqli_query($conexao, $query_2);
   
-    ?>
   }
-  <?php
 
 
 ?>

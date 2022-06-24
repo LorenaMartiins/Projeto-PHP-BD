@@ -13,7 +13,7 @@
 
   <body>
     <div class="container">
-      <form action="/php/cadastro_usuario.php" method="post">
+      <form action="./php/cadastro_usuario.php" method="post">
         <div class="form_box">
           <h1>Novo cadastro</h1>
 

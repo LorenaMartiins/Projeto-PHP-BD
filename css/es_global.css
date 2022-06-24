@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 :root{
   --bg-site: linear-gradient(80.98deg, #e9d6d2 49.95%, #F4F4F6 70.04%);
   --color-1: #074F57;
@@ -8,6 +10,7 @@
 }
 
 body{
+  font-family: 'Poppins', sans-serif;
   background: var(--bg-site);
 }
 

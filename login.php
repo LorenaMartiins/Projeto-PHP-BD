@@ -37,7 +37,7 @@
 
           <input type="submit" value="Entrar" class="btt_form">
 
-          <p> Não tem conta? <a href="cad_usuario.php">Cadastre-se</a></p>
+          <p> Não tem conta? <a href="cadastro.php">Cadastre-se</a></p>
         </div>
       </form>
     </div>

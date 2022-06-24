@@ -1,26 +1,22 @@
 <?php
-  session_start()
-  include("conexao.php");
 
-  if(empty($_POST['i_email']) || empty($_POST['i_senha'])){
-    header("Location: ../index.html");
-  }
+    session_start();
+    include("conexao.php");
 
-  $email = mysqli_real_escape_string($conexao, $_POST['i_email']);
-  $senha = mysqli_real_escape_string($conexao, $_POST['i_senha']);
+    $email = mysqli_real_escape_string($conexao, $_POST['i_email']);
+    $senha = mysqli_real_escape_string($conexao, $_POST['i_senha']);
 
-  $sql = "select id_usuario, email, senha from usuario where email = '$email' and senha = '{$email}' and senha = md5'{$senha}'";
+    $query_1 = "select id_usuario from usuario where email = '{$email}' and senha = md5('{$senha}')";
+    $resposta = mysqli_query($conexao, $query_1);
+    $row = mysqli_num_rows($resposta);
 
-  $resposta = mysqli_query($conexao, $sql);
-
-  $row = mysqli_num_rows($resposta);
-
-  if($row == 1){
-    $_SESSION['usuario'] = $email;
-    header('Location: ../painel.html');
-  }else{
-    $_SESSION['nao_autenticado'] = true;
-    herder('Location: ../index.html');
-  }
+    if($row == 1){
+        $row = mysqli_fetch_assoc($resposta);
+        $_SESSION['usuario'] = $row['id_usuario'];
+        header('Location: ./compra.php');
+    }else{
+        $_SESSION['not_autenticado'] = true;
+        echo "<script> javascript:history.go(-1) </script>";
+    }
 
 ?>

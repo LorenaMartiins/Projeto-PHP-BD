@@ -5,6 +5,6 @@
   define('SENHA','');
   define('BD', 'bd_nike');
 
-  $conexao = mysqli_connect(HOST,USUARIO, SENHA,BD);
+  $conexao = mysqli_connect(HOST, USUARIO, SENHA, BD);
 
 ?>

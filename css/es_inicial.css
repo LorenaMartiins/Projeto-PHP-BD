@@ -1,0 +1,332 @@
+@import url("es_global.css");
+
+body{
+  background: var(--bg-site);
+  padding: 0;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li{
+  float: right;
+}
+
+li a{
+  display: block;
+  text-decoration: none;
+  padding: 10px 10px ;
+  transition: 0.5s;
+  color: var(--color-3);
+}
+
+li #entrar{
+  padding: 15px 25px ;
+}
+
+li a:hover{
+  color: var(--color-1);
+  transition: 0.5s;
+}
+
+header{
+  display: flex;
+  justify-content:space-around;
+  margin-top: 50px;
+
+}
+
+.logo{
+  width: 500px;
+  margin-left: 0px;
+}
+
+.logo #billie img{
+  margin-left: -20px;
+  filter: drop-shadow(0px 4px 4px #151515);
+}
+
+.logo #nike img{
+  width: 250px;
+  margin-left: 200px;
+}
+
+.tenis img{
+  width: 100%;
+  transform: rotate(20deg);
+  scale: scale(1);
+  flex-direction: center;
+  align-items: center;
+  animation: move 6s infinite alternate ease-out;
+}
+
+@keyframes move{
+  from{
+      transform: translate(10%, 10%) rotate(9deg) ;
+  }
+}
+
+@-webkit-keyframes move{
+  from{
+      transform: translateY(10%, 10%) rotate(9deg);
+  }
+}
+
+main h2{
+  text-align: center;
+  color: var(--color-1);
+  font-size:25px;
+  margin-top: 250px;
+}
+
+.info{
+  text-align: center;
+  font-size: 19px;
+  width: 50%;
+  height: 50px;
+  margin:auto;
+  margin-top: 100px;
+}
+
+.billie{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.compra{
+  margin-top: 100px;
+  background: var(--color-4);
+  height: 200px;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 25%;
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+.compra p{
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.compra a{
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  background: var(--color-2);
+  color: white;
+  border-radius: 10px;
+  padding-top:20px;
+  height: 50px;
+  width: 300px;
+  border: none;
+}
+
+a:hover{
+  background: var(--color-1);
+  scale: 1;
+  height:60px;
+  width: 250px;
+  transition: 1s;
+}
+
+/*Fotter*/
+
+footer{
+  margin-top: 100px;
+  height: 10rem;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer p{
+  color: white;
+  margin-top:8rem;
+}
+
+.icons {
+  margin-top: 2rem;
+  display: flex;
+  column-gap: 25px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 26px;
+  color: #fff;
+  border-radius: 50%;
+  outline: 2px solid #fff;
+  transition-property:
+      outline-offset, outline-color,
+      background-color;
+  transition-duration: .25s;
+}
+
+.icon:hover {
+  outline-offset: 4px;
+}
+
+.icon:hover i {
+  animation: shake .25s;
+}
+
+.icon--instagram:hover {
+  background-image: radial-gradient(circle at 30% 107%,
+          #fdf497 0%, #fdf497 5%,
+          #fd5949 45%, #d6249f 60%,
+          #285AEB 90%);
+  outline-color: #a02d76;
+}
+
+.icon--twitter:hover {
+  background-color: #1da1f2;
+  outline-color: #1da1f2;
+}
+
+
+@keyframes shake {
+  10% {
+      transform: rotate(15deg);
+  }
+
+  20% {
+      transform: rotate(-15deg);
+  }
+
+  30% {
+      transform: rotate(15deg);
+  }
+
+  40% {
+      transform: rotate(-15deg);
+  }
+}
+
+/*product*/
+
+.product-details{
+  width: 100%;
+  padding: 0px ;
+  display: flex;
+  justify-content: space-around;
+}
+
+.image-slider{
+  width: 600px;
+  height: 600px;
+  position: relative;
+  background-image: url('../img/air-force-nude-1.jpg');
+  background-size: cover;
+}
+
+.product-images{
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: #fff;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100px;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.product-images img{
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.product-images img.active{
+  opacity: 0.5;
+}
+
+.details{
+  margin-top: 50px;
+  width: 50%;
+}
+
+.details .product-brand{
+  text-transform: capitalize;
+  font-size: 25px;
+}
+
+.details .product-short-des{
+  font-size: 19px;
+  line-height: 30px;
+  height: auto;
+  margin: 15px 0;
+}
+
+.product-price{
+  font-weight: 700;
+  font-size: 30px;
+}
+
+
+.product-sub-heading{
+  font-size: 25px;
+  text-transform: uppercase;
+  margin: 40px 0 10px;
+  font-weight: 300;
+}
+
+.size-radio-btn{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #383838;
+  border-radius: 50%;
+  margin: 10px;
+  margin-left: 0;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #383838;
+  cursor: pointer;
+}
+
+.size-radio-btn.check{
+  background: #383838;
+  color: #fff;
+}
+
+.btn{
+  position: relative;
+  left: -300px;
+  top: 78px;
+  width: 20%;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 20px ;
+  text-transform: capitalize;
+}
+
+.cart-btn{
+  margin-right: 2%;
+  background: var(--color-1);
+  color: #fff;
+}
